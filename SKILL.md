@@ -1,9 +1,9 @@
 ---
-name: zotero-skill
+name: zotero-api-skill
 description: Zotero HTTP API helper for downloading, fetching, searching, creating, and updating Zotero items. Use when syncing or managing Zotero items programmatically; defaults to ZOTERO_USER and ZOTERO_API_KEY environment variables.
 ---
 
-# Zotero Skill
+# Zotero API Skill
 
 ## Overview
 Use `scripts/zotero_cli.py` to perform deterministic Zotero API operations: download items to disk, fetch a single item, search items, create new items, or write updated metadata back to Zotero. The script reads `ZOTERO_USER` (user ID) and `ZOTERO_API_KEY` from the environment unless overridden by flags.
@@ -12,27 +12,27 @@ Use `scripts/zotero_cli.py` to perform deterministic Zotero API operations: down
 
 Download all items (skip attachments by default):
 ```bash
-scripts/zotero_cli.py download --output-dir ./output
+zotero-api-skill/scripts/zotero_cli.py download --output-dir ./output
 ```
 
 Fetch a single item as JSON:
 ```bash
-scripts/zotero_cli.py get --key ABCD1234
+zotero-api-skill/scripts/zotero_cli.py get --key ABCD1234
 ```
 
 Update an item from a JSON file:
 ```bash
-scripts/zotero_cli.py update --key ABCD1234 --input ./output/ABCD1234/original.json
+zotero-api-skill/scripts/zotero_cli.py update --key ABCD1234 --input ./output/ABCD1234/original.json
 ```
 
 Search items by query:
 ```bash
-scripts/zotero_cli.py search --query "transformer retrieval" --limit 10
+zotero-api-skill/scripts/zotero_cli.py search --query "transformer retrieval" --limit 10
 ```
 
 Create an item from data JSON:
 ```bash
-scripts/zotero_cli.py create --input ./new_item.json --data-only
+zotero-api-skill/scripts/zotero_cli.py create --input ./new_item.json --data-only
 ```
 
 ## Tasks
